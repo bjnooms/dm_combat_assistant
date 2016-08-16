@@ -1,0 +1,82 @@
+#!/usr/bin/python 
+
+class Character(object):
+
+    def __init__(self, name, ac, hp, init_roll):
+        self.name = name
+        self.ac = ac
+        self.hp = hp
+        self.init_roll = init_roll
+
+class Player(Character):
+
+    def name(self):
+        print("Character name: "+self.name)
+
+    def ac(self):
+        print(self.name+"AC: "+self.ac)
+
+    def current_hp(self):
+        print(self.name+"Current HP: "+self.hp)
+
+    def initiative(self):
+        print(self.name+"Initiative Roll was: "+self.init_roll)
+
+"""
+    def damaged(self, damage_taken):
+        print(self.name+" original HP: "+self.hp)
+        print(self.name+" took %s damage.") % damage_taken
+        if damage_taken >= self.hp:
+            print(self.name+" is down!")
+            return True
+        else:
+            remain_hp = self.hp - damage_taken
+            print(self.name+" HP remaining: %s") % remain_hp
+            self.hp = remain_hp
+
+class NonPlayer(Character):
+    
+    def damaged(self, damage_taken):
+        print(self.name+" original HP: "+self.hp)
+        print(self.name+" took %s damage.") % damage_taken
+        if damage_taken >= self.hp:
+            print(self.name+" is dead!")
+            return True
+        else:
+            remain_hp = self.hp - damage_taken
+            print(self.name+" HP remaining: %s") % remain_hp
+            self.hp = remain_hp
+"""
+# create a Player character object for each pc
+pc_list = []
+num_pc = int(raw_input("Number of Player Characters: "))
+for num in range(0,num_pc):
+    new_pc = raw_input("Player Character Name: ")
+    pc_list.append(new_pc)
+
+for each in pc_list:
+    each_ac = raw_input("AC: ")
+    each_hp = raw_input("HP: ")
+    each_init_roll = raw_input("Initiative Roll: ")
+    each = Player("each", each_ac, each_hp, each_init_roll)
+    
+"""
+# create a NonPlayer character object for each npc
+npc_list = []
+num_npc = int(raw_input("Number of Non-Player Characters: "))
+for num in range(0,num_npc):
+    new_npc = raw_input("NPC Name: ")
+    new_npc_ac = raw_input("AC: ")
+    new_npc_hp = raw_input("HP: ")
+    new_npc_init_roll = raw_input("Initiative Roll: ")
+    npc_list.append(new_npc)
+    new_npc = NonPlayer(new_npc, new_npc_ac, new_npc_hp, new_npc_init_roll)
+
+
+
+ben = Player("ben", 13, 14, 15)
+"""
+print ben.name
+print ben.ac
+print ben.hp
+print ben.init_roll
